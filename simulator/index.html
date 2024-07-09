@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador: LLM para toma de decisiones de robots</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap');
+
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(to bottom, #d3d3d3, #ffffff);
+            font-family: 'Raleway', sans-serif;
+        }
+        h1 {
+            margin-bottom: 40px;
+            font-size: 2.5em;
+            color: #333;
+        }
+        #grid-container {
+            display: grid;
+            grid-template-columns: repeat(20, 25px);
+            grid-template-rows: repeat(20, 25px);
+            gap: 0;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border: 10px solid black;
+            box-sizing: content-box;
+            margin-bottom: 20px; /* Add space below the grid */
+        }
+        .grid-item {
+            width: 25px;
+            height: 25px;
+            border: 1px solid black;
+            background-size: cover;
+            background-position: center;
+        }
+        #output-container {
+            margin-bottom: 0px; /* Add space below the textarea */
+        }
+        #image-container {
+            text-align: center; /* Center the image container */
+        }
+        #image-container img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Simulador</h1>
+    <div id="grid-container"></div>
+    <div id="output-container">
+        <textarea readonly id="output-area" rows="10" cols="100">Salida del simulador...
+        </textarea>
+    </div>
+    <div id="image-container">
+        <img src="assets/keys.png" alt="Descripción de la imagen" style="max-width: 40%; height: auto;">
+    </div>
+    
+    <script src="main.js"></script>
+</body>
+</html>
