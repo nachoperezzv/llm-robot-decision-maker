@@ -1,0 +1,48 @@
+{
+    "objects": [
+        { "type": "stickman", "x": 3, "y": 3 },
+        { "type": "stickman", "x": 16, "y": 16 },
+        { "type": "stickman", "x": 5, "y": 15 },
+        { "type": "stickman", "x": 18, "y": 2 },
+        { "type": "stickman", "x": 2, "y": 18 },
+
+        { "type": "wall", "x": 7, "y": 7 },
+        { "type": "wall", "x": 7, "y": 8 },
+        { "type": "wall", "x": 7, "y": 9 },
+        { "type": "wall", "x": 7, "y": 10 },
+        { "type": "wall", "x": 7, "y": 11 },
+        { "type": "wall", "x": 7, "y": 12 },
+        { "type": "wall", "x": 7, "y": 13 },
+        { "type": "wall", "x": 7, "y": 14 },
+        { "type": "wall", "x": 7, "y": 15 },
+        { "type": "wall", "x": 7, "y": 16 },
+        { "type": "wall", "x": 7, "y": 17 },
+        { "type": "wall", "x": 7, "y": 18 },
+        { "type": "wall", "x": 7, "y": 19 },
+
+        { "type": "block", "x": 8, "y": 7 },
+        { "type": "block", "x": 8, "y": 8 },
+        { "type": "block", "x": 8, "y": 9 },
+        { "type": "block", "x": 8, "y": 10 },
+        { "type": "block", "x": 8, "y": 11 },
+        { "type": "block", "x": 8, "y": 12 },
+        { "type": "block", "x": 8, "y": 13 },
+        { "type": "block", "x": 8, "y": 14 },
+        { "type": "block", "x": 8, "y": 15 },
+        { "type": "block", "x": 8, "y": 16 },
+        { "type": "block", "x": 8, "y": 17 },
+        { "type": "block", "x": 8, "y": 18 },
+        { "type": "block", "x": 8, "y": 19 },
+
+        { "type": "price", "x": 1, "y": 1 },
+        { "type": "price", "x": 18, "y": 18 },
+        { "type": "price", "x": 1, "y": 18 },
+        { "type": "price", "x": 18, "y": 1 },
+        { "type": "price", "x": 1, "y": 10 },
+        { "type": "price", "x": 10, "y": 1 },
+        { "type": "price", "x": 10, "y": 18 },
+        { "type": "price", "x": 18, "y": 10 },
+        { "type": "price", "x": 5, "y": 5 },
+        { "type": "price", "x": 15, "y": 15 }
+    ]
+}

@@ -1,0 +1,209 @@
+{
+    "objects": [
+        {
+            "type": "stickman",
+            "x": 8,
+            "y": 10
+        },
+        {
+            "type": "stickman",
+            "x": 12,
+            "y": 10
+        },
+        {
+            "type": "stickman",
+            "x": 10,
+            "y": 8
+        },
+        {
+            "type": "stickman",
+            "x": 10,
+            "y": 12
+        },
+        {
+            "type": "stickman",
+            "x": 9,
+            "y": 9
+        },
+        {
+            "type": "wall",
+            "x": 7,
+            "y": 7
+        },
+        {
+            "type": "wall",
+            "x": 7,
+            "y": 8
+        },
+        {
+            "type": "wall",
+            "x": 7,
+            "y": 9
+        },
+        {
+            "type": "wall",
+            "x": 7,
+            "y": 11
+        },
+        {
+            "type": "wall",
+            "x": 7,
+            "y": 12
+        },
+        {
+            "type": "wall",
+            "x": 7,
+            "y": 13
+        },
+        {
+            "type": "wall",
+            "x": 13,
+            "y": 7
+        },
+        {
+            "type": "wall",
+            "x": 13,
+            "y": 8
+        },
+        {
+            "type": "wall",
+            "x": 13,
+            "y": 9
+        },
+        {
+            "type": "wall",
+            "x": 13,
+            "y": 11
+        },
+        {
+            "type": "wall",
+            "x": 13,
+            "y": 12
+        },
+        {
+            "type": "wall",
+            "x": 13,
+            "y": 13
+        },
+        {
+            "type": "block",
+            "x": 9,
+            "y": 7
+        },
+        {
+            "type": "block",
+            "x": 10,
+            "y": 7
+        },
+        {
+            "type": "block",
+            "x": 11,
+            "y": 7
+        },
+        {
+            "type": "block",
+            "x": 9,
+            "y": 13
+        },
+        {
+            "type": "block",
+            "x": 10,
+            "y": 13
+        },
+        {
+            "type": "block",
+            "x": 11,
+            "y": 13
+        },
+        {
+            "type": "block",
+            "x": 7,
+            "y": 10
+        },
+        {
+            "type": "block",
+            "x": 13,
+            "y": 10
+        },
+        {
+            "type": "block",
+            "x": 5,
+            "y": 5
+        },
+        {
+            "type": "block",
+            "x": 15,
+            "y": 15
+        },
+        {
+            "type": "block",
+            "x": 5,
+            "y": 15
+        },
+        {
+            "type": "block",
+            "x": 15,
+            "y": 5
+        },
+        {
+            "type": "block",
+            "x": 3,
+            "y": 3
+        },
+        {
+            "type": "block",
+            "x": 17,
+            "y": 17
+        },
+        {
+            "type": "price",
+            "x": 6,
+            "y": 6
+        },
+        {
+            "type": "price",
+            "x": 14,
+            "y": 6
+        },
+        {
+            "type": "price",
+            "x": 6,
+            "y": 14
+        },
+        {
+            "type": "price",
+            "x": 14,
+            "y": 14
+        },
+        {
+            "type": "price",
+            "x": 4,
+            "y": 4
+        },
+        {
+            "type": "price",
+            "x": 16,
+            "y": 16
+        },
+        {
+            "type": "price",
+            "x": 4,
+            "y": 16
+        },
+        {
+            "type": "price",
+            "x": 16,
+            "y": 4
+        },
+        {
+            "type": "price",
+            "x": 2,
+            "y": 2
+        },
+        {
+            "type": "price",
+            "x": 18,
+            "y": 18
+        }
+    ]
+}
