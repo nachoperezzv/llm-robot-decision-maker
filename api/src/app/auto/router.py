@@ -15,7 +15,7 @@ from src.app.auto.schemas.output import EnvResponse
 from src.app.auto.service import decide_action_with_gpt4
 from src.app.manual.serive import move_robot, perform_action
 
-from src.app.constants import MOVS, ACTIONS
+from api.src.resources.constants import MOVS, ACTIONS
 
 
 router = APIRouter(

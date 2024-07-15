@@ -9,8 +9,8 @@ import openai
 
 # Internal imports
 from src.app.auto.schemas.input import Point, Object
-from src.app.objects import walls, blocks, stickman, price
-from src.app.constants import WIDTH, HEIGHT
+from api.src.resources.objects import walls, blocks, stickman, price
+from api.src.resources.constants import WIDTH, HEIGHT
 
 MOVS = {
     "N": Point(x=0, y=-1), 

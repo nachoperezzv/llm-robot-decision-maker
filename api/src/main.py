@@ -15,9 +15,15 @@ import uvicorn
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
+from loguru import logger
+
 # Internal imports
 from src.app.auto.router import router as auto_router
 from src.app.manual.router import router as manual_router
+
+from src.config import logger_config
+
+logger.level = logger_config.level
 
 app = FastAPI(
     title="RoboticLLMApi",
