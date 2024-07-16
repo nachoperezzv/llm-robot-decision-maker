@@ -1,14 +1,14 @@
 {
     "objects": [
-        { "type": "stickman", "x": 5, "y": 10},
-        { "type": "wall", "x": 10, "y": 20 },
-        { "type": "block", "x": 15, "y": 5 },
-        { "type": "block", "x": 8, "y": 12 },
-        { "type": "price", "x": 8, "y": 3 },
-        { "type": "stickman", "x": 9, "y": 4 },
-        { "type": "price", "x": 17, "y": 6 },
-        { "type": "price", "x": 18, "y": 19 },
-        { "type": "price", "x": 4, "y": 1 },
-        { "type": "price", "x": 1, "y": 19 }
+        { "id": "stickman", "pos": {"x": 5, "y": 10}},
+        { "id": "wall", "pos": {"x": 10, "y": 20 }},
+        { "id": "block", "pos": {"x": 15, "y": 5 }},
+        { "id": "block", "pos": {"x": 8, "y": 12 }},
+        { "id": "price", "pos": {"x": 8, "y": 3 }},
+        { "id": "stickman", "pos": {"x": 9, "y": 4 }},
+        { "id": "price", "pos": {"x": 17, "y": 6 }},
+        { "id": "price", "pos": {"x": 18, "y": 19 }},
+        { "id": "price", "pos": {"x": 4, "y": 1 }},
+        { "id": "price", "pos": {"x": 1, "y": 19 }}
     ]
 }
