@@ -25,25 +25,22 @@ from src.config import logger_config
 
 logger.level = logger_config.level
 
-app = FastAPI(
-    title="RoboticLLMApi",
-    routes=[
-        auto_router, 
-        manual_router
-    ]
-)
+app = FastAPI(title="RoboticLLMApi")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=["*"], 
     allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
+    allow_methods=["*"],  
+    allow_headers=["*"],  
 )
+
+app.include_router(auto_router)
+app.include_router(manual_router)
 
 @app.get("/health")
 def health_check():
     return {"OK"}
 
 if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    uvicorn.run(app, host="127.0.0.1", port=8000)

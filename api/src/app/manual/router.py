@@ -15,13 +15,13 @@ from src.app.manual.schemas.output import EnvResponse
 from src.app.manual.service import move_robot, perform_action
 
 router = APIRouter(
-    prefix="/manual",
+    prefix="/api/manual",
     tags=["manual"]
 )
 
-@router.get("")
+@router.post("")
 def manual(env: ManualEnvRequest) -> EnvResponse:
-    """GET method for /manual
+    """POST method for /manual
 
     Arguments:
         env (ManualEnvRequest): See more in `src.app.manual.schemas.input`

@@ -9,8 +9,8 @@ from fastapi import HTTPException
 
 # Internal imports
 from src.app.manual.schemas.input import Point, Object
-from api.src.resources.objects import walls, blocks, stickman, price
-from api.src.resources.constants import WIDTH, HEIGHT
+from src.resources.objects import walls, blocks, stickman, price
+from src.resources.constants import WIDTH, HEIGHT
 
 MOVS = {
     "N": Point(x=0, y=-1), 

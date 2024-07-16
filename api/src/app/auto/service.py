@@ -2,52 +2,61 @@
 """
 
 # Standard imports
+import json
 from typing import List
 
 # Third-party imports
-import openai
+from openai import OpenAI
+from loguru import logger
 
 # Internal imports
 from src.app.auto.schemas.input import Point, Object
-from api.src.resources.objects import walls, blocks, stickman, price
-from api.src.resources.constants import WIDTH, HEIGHT
 
-MOVS = {
-    "N": Point(x=0, y=-1), 
-    "E": Point(x=1, y=0), 
-    "S": Point(x=0, y=1), 
-    "O": Point(x=-1, y=0)
-}
+from src.config import openai_config, logger_config
+from src.resources.objects import objects
+from src.prompts import auto_service_prompt
 
-OBJECTS = {
-    "pared": walls,
-    "bloque": blocks,
-    "stickman": stickman,
-    "objeto": price
-}
 
-def decide_action_with_gpt4(robot: Point, close_objects: List[Object]) -> str:
-    prompt = f"""
-    Eres un agente inteligente en un entorno 2D. Tu objetivo es recolectar el máximo número de elementos posibles.
-    Aquí tienes las acciones disponibles:
-    - Destruir (D): Para destruir paredes y bloques.
-    - Mover (M): Para mover bloques.
-    - Recolectar (R): Para recolectar objetos.
-    Estos son los objetos cercanos en un radio de 2 celdas:
-    {close_objects}
-    
-    La posición actual del robot es ({robot.x}, {robot.y}).
-    
-    Toma una decisión sobre qué dirección o acción tomar para recolectar el máximo número de elementos posibles de la manera más eficiente.
+client = OpenAI(api_key=openai_config.apikey)
+logger.level = logger_config.level
+
+
+def decide_action(robot: Point, env_objects: List[Object], close_objects: List[Object]) -> str:
+    """Makes a request to Openai API
+
+    Arguments:
+        robot (Point): Where robot is
+        env_objects (List[Object]): List of position of all the objects in the map.
+        close_objects (List[Object]): List of position of the close objects in the map. 
+
+    Returns:
+        (str)
     """
+
+    content = {
+        "robot": robot, 
+        "objects": objects,
+        "env_objects": env_objects, 
+        "close_objects": close_objects
+    }
+    content = auto_service_prompt.render(content)
     
-    response = openai.Completion.create(
-        engine="text-davinci-003",
-        prompt=prompt,
-        max_tokens=150,
-        n=1,
-        stop=None,
-        temperature=0.7,
+    logger.debug(content)
+
+    response = client.chat.completions.create(
+        model="gpt-4o",
+        max_tokens=1024,
+        temperature=0.0,
+        response_format={ "type": "json_object" }, 
+        messages=[
+            {"role":"system",
+             "content": content}
+        ]
     )
     
-    return response.choices[0].text.strip()
+    result = response.choices[0].message.content
+    result = json.loads(result)
+
+    logger.debug(result)
+
+    return result
