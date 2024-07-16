@@ -54,10 +54,10 @@ The output should be only a JSON type object based on this format:
 <output_format>
 {
     "objects": [
-        { "type": "stickman", "x": 5, "y": 10},
-        { "type": "wall", "x": 10, "y": 20 },
-        { "type": "block", "x": 15, "y": 5 },
-        { "type": "price", "x": 1, "y": 19 }
+        { "id": "stickman", "pos": {"x": 5, "y": 10}},
+        { "id": "wall", "pos": {"x": 10, "y": 20 }},
+        { "id": "block", "pos": {"x": 15, "y": 5 }},
+        { "id": "price", "pos": {"x": 1, "y": 19}}
     ]
 }
 </output_format>
