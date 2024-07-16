@@ -27,8 +27,14 @@ from src.resources import map_level, map_configuration
 client = OpenAI(api_key=openai_config.apikey)
 logger.level = logger_config.level
 
-def map_generator():
+def map_generator() -> None:
     """Generates a map
+
+    Arguments:
+        (None)
+
+    Returns:
+        (None)
     """
 
     content = {
