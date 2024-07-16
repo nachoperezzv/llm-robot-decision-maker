@@ -4,166 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simulador: LLM para toma de decisiones de robots</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap');
+    
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-        body {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background: linear-gradient(to bottom, #d3d3d3, #ffffff);
-            font-family: 'Raleway', sans-serif;
-        }
-        h1 {
-            margin-bottom: 40px;
-            font-size: 2.5em;
-            color: #333;
-        }
-        #grid-container {
-            display: grid;
-            grid-template-columns: repeat(20, 25px);
-            grid-template-rows: repeat(20, 25px);
-            gap: 0;
-            background-color: white;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border: 10px solid black;
-            box-sizing: content-box;
-            margin-bottom: 20px; /* Add space below the grid */
-        }
-        .grid-item {
-            width: 25px;
-            height: 25px;
-            border: 1px solid black;
-            background-size: cover;
-            background-position: center;
-        }
-        .toggle-switch {
-            position: relative;
-            width: 100px;
-            margin-left: auto;
-        }
-
-        .toggle-checkbox {
-            display: none;
-        }
-
-        .toggle-label {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-            height: 40px;
-            background-color: #ccc;
-            border-radius: 50px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            position: relative;
-        }
-
-        .toggle-label::after {
-            content: '';
-            position: absolute;
-            top: 5px;
-            left: 5px;
-            width: 30px;
-            height: 30px;
-            background-color: #fff;
-            border-radius: 50%;
-            transition: transform 0.3s;
-        }
-
-        .label-text {
-            font-size: 14px;
-            color: #fff;
-            position: absolute;
-            transition: opacity 0.3s;
-        }
-
-        .label-text-auto {
-            opacity: 1;
-        }
-
-        .label-text-man {
-            opacity: 0;
-        }
-
-        .toggle-checkbox:checked + .toggle-label {
-            background-color: #66bb6a;
-        }
-
-        .toggle-checkbox:checked + .toggle-label .label-text-auto {
-            opacity: 0;
-        }
-
-        .toggle-checkbox:checked + .toggle-label .label-text-man {
-            opacity: 1;
-        }
-
-        .toggle-checkbox:checked + .toggle-label::after {
-            transform: translateX(60px);
-        }
-        #loadMapDropdown {
-            display: block;
-            margin-bottom: 20px;
-            padding: 10px;
-            font-size: 16px;
-        }
-        #map-container {
-            margin-top: 0px;
-        }
-        #buttons-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-        }
-        #output-container {
-            margin-bottom: 0px; /* Add space below the textarea */
-        }
-        #image-container {
-            text-align: center; /* Center the image container */
-        }
-        #image-container img {
-            max-width: 100%;
-            height: auto;
-        }
-    </style>
 </head>
 <body>
     <h1>Simulador</h1>
     <div id="map-container">
         <div id="buttons-container">
-            <select id="loadMapDropdown">
-                <option value="" disabled selected>Seleccione un mapa</option>
-                <option value="maps/map1.json">Mapa 1</option>
-                <option value="maps/map2.json">Mapa 2</option>
-                <option value="maps/map3.json">Mapa 3</option>
-                <option value="maps/map4.json">Mapa 4</option>
-                <option value="maps/map5.json">Mapa 5</option>
-                <option value="maps/map6.json">Mapa 6</option>
-                <option value="maps/map7.json">Mapa 7</option>
-                <option value="maps/map8.json">Mapa 8</option>
-                <option value="maps/map9.json">Mapa 9</option>
-                <option value="maps/map10.json">Mapa 10</option>
-            </select>
+            <div id="loadMapContainer">
+                <select id="loadMapDropdown">
+                    <option value="" disabled selected>Seleccione un mapa</option>
+                    <option value="maps/map1.json">Mapa 1</option>
+                    <option value="maps/map2.json">Mapa 2</option>
+                    <option value="maps/map3.json">Mapa 3</option>
+                    <option value="maps/map4.json">Mapa 4</option>
+                    <option value="maps/map5.json">Mapa 5</option>
+                    <option value="maps/map6.json">Mapa 6</option>
+                    <option value="maps/map7.json">Mapa 7</option>
+                    <option value="maps/map8.json">Mapa 8</option>
+                    <option value="maps/map9.json">Mapa 9</option>
+                    <option value="maps/map10.json">Mapa 10</option>
+                </select>
+            </div>
+            <div id="playStopContainer">
+                <button id="playStopButton"><i class="fas fa-play"></i></button>
+            </div>
             <div class="toggle-switch">
                 <input type="checkbox" id="toggle" class="toggle-checkbox">
                 <label for="toggle" class="toggle-label">
             </div>
         </div>
-        <div id="grid-container"></div>
+        <div id="grid-container">
+        </div>
     </div>
     <div id="output-container">
-        <textarea readonly id="output-area" rows="10" cols="100">Salida del simulador...
-        </textarea>
-    </div>
-    <div id="image-container">
-        <img src="assets/keys.png" alt="Descripción de la imagen" style="max-width: 40%; height: auto;">
-    </div>
-    
+        <textarea readonly id="output-area" rows="10" cols="100" placeholder="Salida del simulador ..."></textarea>
+    </div>  
     <script src="main.js"></script>
 </body>
 </html>
