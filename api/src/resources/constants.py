@@ -1,8 +1,8 @@
 """Constants
 """
 
-WIDTH = 50
-HEIGHT = 50
+WIDTH = 20
+HEIGHT = 20
 
 MOVS = [
     ("N", "norte"), 
